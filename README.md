@@ -1,7 +1,13 @@
+this is hosting link--->
+https://react-chat-app12.netlify.app/
+
 Note: use this email and password to login and view the ui of web application...
+
 DEMO-->
 user(email Id):demo@gmail.com
+
 password:123456
+
 {u can register with new id u redirect to the chat web app but for viewing chat between person u can login with above}
 
 Introduction:
