@@ -1,10 +1,10 @@
 this is hosting link--->
-https://react-chat-app12.netlify.app/
+https://polite-belekoy-8bfff6.netlify.app/
 
 Note: use this email and password to login and view the ui of web application...
 
 DEMO-->
-user(email Id):demo@gmail.com
+user(email Id):abhi@gmail.com
 
 password:123456
 
