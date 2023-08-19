@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import { AuthContextProvider } from './context/AuthContext';
-import {ChatContextProvider} from "./context/ChatContext"
+import { ChakraProvider, theme } from '@chakra-ui/react';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AuthContextProvider>
-  <ChatContextProvider>
-  <React.StrictMode>
+<React.StrictMode>
+  <ChakraProvider theme={theme}>
     <App />
-  </React.StrictMode>
-  </ChatContextProvider>
-  </AuthContextProvider>
+  </ChakraProvider>
+</React.StrictMode>
+
+
 );
 
 

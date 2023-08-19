@@ -1,38 +1,21 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { AuthContext } from "../context/AuthContext";
-import { ChatContext } from "../context/ChatContext";
+import { Avatar, HStack, Text, VStack } from "@chakra-ui/react";
+import React from "react";
 
-const Message = ({ message }) => {
-  const { currentUser } = useContext(AuthContext);
-  const { data } = useContext(ChatContext);
-
-  const ref = useRef();
-
-  useEffect(() => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  }, [message]);
-
+const Message = ({ text, url, user = "other" }) => {
   return (
-    <div
-      ref={ref}
-      className={`message ${message.senderId === currentUser.uid && "owner"}`}
+    <HStack
+      alignSelf={user === "me" ? "flex-end" : "flex-start"}
+      borderRadius={"4"}
+      bg={ user == "me" ? "whatsapp.100" : "telegram.100"}
+      px={4}
+      py={2}
     >
-      <div className="messageInfo">
-        <img
-          src={
-            message.senderId === currentUser.uid
-              ? currentUser.photoURL
-              : data.user.photoURL
-          }
-          alt=""
-        />
-        <span>just now</span>
-      </div>
-      <div className="messageContent">
-        <p>{message.text}</p>
-        {message.img && <img src={message.img} alt="" />}
-      </div>
-    </div>
+      <VStack>
+      {user == "other" && <Avatar h={8} src={url} /> }    
+      </VStack>
+      <Text>{text}</Text>
+      {user == "me" && <Avatar src={url} /> }    
+    </HStack>
   );
 };
 
